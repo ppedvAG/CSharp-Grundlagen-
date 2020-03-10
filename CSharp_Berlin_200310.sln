@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modul02.2_ZufallszahlenRate
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab02_Lotto", "Lotto\Lab02_Lotto.csproj", "{1D72069F-DD93-4478-A347-A13011425D53}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modul03.1_Enumeratoren", "Enumeratoren\Modul03.1_Enumeratoren.csproj", "{72C31C40-0F35-4E07-9D7F-C6ACE3ACBC0E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{1D72069F-DD93-4478-A347-A13011425D53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D72069F-DD93-4478-A347-A13011425D53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D72069F-DD93-4478-A347-A13011425D53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72C31C40-0F35-4E07-9D7F-C6ACE3ACBC0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72C31C40-0F35-4E07-9D7F-C6ACE3ACBC0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72C31C40-0F35-4E07-9D7F-C6ACE3ACBC0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72C31C40-0F35-4E07-9D7F-C6ACE3ACBC0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

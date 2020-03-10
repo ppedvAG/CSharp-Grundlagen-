@@ -127,6 +127,15 @@ namespace Kontrollstrukturen
             if (beispiel.Contains('o'))
                 Console.WriteLine("Wort enthält o");
 
+            //Bsp für Benutzereingabe in Array
+            int[] benutzerarray = new int[3];
+            for (int i = 0; i < benutzerarray.Length; i++)
+            {
+                Console.WriteLine("Gib eine Zahl zwischen 1 und 10 ein:");
+                benutzerarray[i] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine($"Deine Eingaben: {benutzerarray[0]},{benutzerarray[1]},{benutzerarray[2]}");
+
             Console.ReadKey();
 
         }
