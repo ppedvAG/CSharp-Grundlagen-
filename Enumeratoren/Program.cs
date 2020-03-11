@@ -24,7 +24,7 @@ namespace Enumeratoren
 
             //For-Schleife über die möglichen Zustande des Enumerators
             Console.WriteLine("Welcher Wochentag ist heute?");
-            for (int i = 1; i <= Enum.GetValues(typeof(Wochentag)).Length; i++)
+            for (int i = 1; i < 8; i++)
             {
                 Console.WriteLine($"{i}: {(Wochentag)i}");
             }

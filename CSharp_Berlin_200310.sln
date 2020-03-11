@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab02_Lotto", "Lotto\Lab02_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modul03.1_Enumeratoren", "Enumeratoren\Modul03.1_Enumeratoren.csproj", "{72C31C40-0F35-4E07-9D7F-C6ACE3ACBC0E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modul03.2_Funktionen", "Funktionen\Modul03.2_Funktionen.csproj", "{A4D9961E-ECBB-4F8F-A7C8-44C20E527A73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab03_Taschenrechner", "Taschenrechner\Lab03_Taschenrechner.csproj", "{1E411C39-4903-49BA-9DFC-11EE657F7E17}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{72C31C40-0F35-4E07-9D7F-C6ACE3ACBC0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72C31C40-0F35-4E07-9D7F-C6ACE3ACBC0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72C31C40-0F35-4E07-9D7F-C6ACE3ACBC0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4D9961E-ECBB-4F8F-A7C8-44C20E527A73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4D9961E-ECBB-4F8F-A7C8-44C20E527A73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4D9961E-ECBB-4F8F-A7C8-44C20E527A73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4D9961E-ECBB-4F8F-A7C8-44C20E527A73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E411C39-4903-49BA-9DFC-11EE657F7E17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E411C39-4903-49BA-9DFC-11EE657F7E17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E411C39-4903-49BA-9DFC-11EE657F7E17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E411C39-4903-49BA-9DFC-11EE657F7E17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
