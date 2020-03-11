@@ -6,8 +6,18 @@ using System.Threading.Tasks;
 
 namespace Fahrzeugpark
 {
-	public class Fahrzeug
+	public abstract class Fahrzeug
 	{
+		#region Statische Member
+		//Als STATIC markierte Variablen und Methoden hängen an der Klasse selbst und nicht an instanziierten Objekten.
+		public static int AnzahlErstellterFahrzeuge { get; set; }
+
+		public static string ZeigeAnzahlFahrzeuge()
+		{
+			return $"Es wurden {AnzahlErstellterFahrzeuge} Fahrzeuge gebaut.";
+		}
+		#endregion
+
 		#region Felder und Eigenschaften
 		//FELDER (Membervariablen) sind die Variablen einzelner Objekte, welche die Zustände dieser Objekte definieren
 		private int maxGeschwindigkeit;
@@ -45,6 +55,8 @@ namespace Fahrzeugpark
 			this.Preis = preis;
 			this.AktGeschwindigkeit = 0;
 			this.MotorLäuft = false;
+
+			AnzahlErstellterFahrzeuge++;
 		}
 
 		//Es können mehrere Konstruktoren definiert werden, welche unterschiedliche Übergabeparameter haben (Überladung). Ein Konstruktor, der keine
@@ -91,13 +103,26 @@ namespace Fahrzeugpark
 			this.AktGeschwindigkeit = 0;
 		}
 
-		public string BeschreibeMich()
+		//Als VIRTUAL markierte Methoden können in Kindklassen mittels OVERRIDE überschrieben werden.		
+		///vgl. PKW
+		public virtual string BeschreibeMich()
 		{
 			if (this.MotorLäuft)
 				return $"{this.Name} kostet {this.Preis}€ und fährt momentan mit {this.AktGeschwindigkeit} von maximal {this.MaxGeschwindigkeit}km/h.";
 			else
 				return $"{this.Name} kostet {this.Preis}€ und könnte maximal {this.MaxGeschwindigkeit}km/h fahren.";
 		}
+
+		//Die ToString()-Methode wird von der object-Klasse an alle anderen Klassen vererbt. Sie wird immer dann aufgerufen, wenn ein Objekt als
+		//String dargestellt werden soll
+		public override string ToString()
+		{
+			return this.BeschreibeMich();
+		}
+
+		//Eine als ABSTRACT gesetzte Methode (nur in abstrakten Klassen möglich) beseht nur aus einem Methodenkopf und zwingt erbende
+		//Klassen diese Methode zu implementieren
+		public abstract void Hupe();
 		#endregion
 	}
 }

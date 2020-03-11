@@ -50,23 +50,68 @@ namespace TesteFahrzeugpark
 
             #region Lab04: Fahrzeug_Klasse
 
-            //Deklaration einer Fahrzeug-Variablen und Initialisierung mittels einer Fahrzeug-Instanz
-            Fahrzeug fz1 = new Fahrzeug("Mercedes", 190, 23000);
-            //Ausführen der BeschreibeMich()-Methode des Fahrzeugs und Ausgabe in der Konsole
-            Console.WriteLine(fz1.BeschreibeMich());
+            ////Deklaration einer Fahrzeug-Variablen und Initialisierung mittels einer Fahrzeug-Instanz
+            //Fahrzeug fz1 = new Fahrzeug("Mercedes", 190, 23000);
+            ////Ausführen der BeschreibeMich()-Methode des Fahrzeugs und Ausgabe in der Konsole
+            //Console.WriteLine(fz1.BeschreibeMich());
 
-            //Diverse Methodenausführungen
-            fz1.StarteMotor();
-            fz1.Beschleunige(120);
-            Console.WriteLine(fz1.BeschreibeMich());
+            ////Diverse Methodenausführungen
+            //fz1.StarteMotor();
+            //fz1.Beschleunige(120);
+            //Console.WriteLine(fz1.BeschreibeMich());
 
-            fz1.Beschleunige(300);
-            Console.WriteLine(fz1.BeschreibeMich());
+            //fz1.Beschleunige(300);
+            //Console.WriteLine(fz1.BeschreibeMich());
 
-            fz1.StoppeMotor();
-            Console.WriteLine(fz1.BeschreibeMich());
+            //fz1.StoppeMotor();
+            //Console.WriteLine(fz1.BeschreibeMich());
 
             #endregion
+
+            #region Modul05: Vererbung
+
+            ////Bsp-Objekt-Instanzierung
+            //PKW pkw1 = new PKW("BMW", 190, 23000, 4);
+            //pkw1 = new PKW("BMW", 190, 23000, 4);
+            //pkw1 = new PKW("BMW", 190, 23000, 4);
+            //pkw1 = new PKW("BMW", 190, 23000, 4);
+            //pkw1 = new PKW("BMW", 190, 23000, 4);
+            //pkw1 = new PKW("BMW", 190, 23000, 4);
+            //pkw1 = new PKW("BMW", 190, 23000, 4);
+
+            ////Aufruf der ToString()-Methode
+            //Console.WriteLine(pkw1);
+            ////Aufruf der Hupe()-Methode
+            //pkw1.Hupe();
+
+            ////Ausgabe von statischer Eingenschaft/Methode
+            //Console.WriteLine(Fahrzeug.AnzahlErstellterFahrzeuge);
+            //Console.WriteLine(Fahrzeug.ZeigeAnzahlFahrzeuge());
+
+            #endregion
+
+            #region Lab05: PKW-, Schiff- und Flugzeug-Klasse
+
+            //Instanzierung eines Bsp-PKWs
+            PKW pkw1 = new PKW("BMW", 250, 23000, 5);
+            Console.WriteLine(pkw1.BeschreibeMich());
+            pkw1.Hupe();
+
+            //Instanzierung eines Bsp-Schiffs
+            Schiff schiff1 = new Schiff("Titanic", 40, 3500000, Schiff.SchiffsTreibstoff.Dampf);
+            Console.WriteLine(schiff1.BeschreibeMich());
+            schiff1.Hupe();
+
+            //Instanzierung eines Bsp-Flugzeugs
+            Flugzeug flugzeug1 = new Flugzeug("Boing", 750, 3000000, 9990);
+            Console.WriteLine(flugzeug1.BeschreibeMich());
+            flugzeug1.Hupe();
+
+            //Ausgabe der statischen Methode der Fahrzeugklasse
+            Console.WriteLine(Fahrzeug.ZeigeAnzahlFahrzeuge());
+
+            #endregion
+
             Console.ReadKey();
         }
     }
