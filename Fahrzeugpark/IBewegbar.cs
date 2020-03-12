@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Fahrzeugpark
 {
+    //vgl. IBeladbar
     public interface IBewegbar
     {
         int AnzahlRäder { get; set; }

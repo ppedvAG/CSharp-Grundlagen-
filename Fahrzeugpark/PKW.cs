@@ -7,11 +7,13 @@ using System.Threading.Tasks;
 namespace Fahrzeugpark
 {
     //PKW erbt mittels des :-Zeichens von der Fahrzeug-Klasse und übernimmt somit alle Eigenschaften und Methoden von dieser.
+    ///Zusätzlich implementiert diese Klasse das Interface IBewegbar.
     public class PKW : Fahrzeug, IBewegbar
     {
         //Zusätzliche PKW-eigene Eigenschaft
         public int AnzahlTüren { get; set; }
 
+        //Durch Interface verlangte Eigenschaft
         public int AnzahlRäder { get; set; }
 
         //PKW-Konstruktor, welcher per BASE-Stichwort den Konstruktor der Fahrzeugklasse aufruft. Dieser erstellt dann ein Fahrzeug, gibt dies
@@ -36,6 +38,7 @@ namespace Fahrzeugpark
             Console.WriteLine("HupHup");
         }
 
+        //Durch Interface verlangte Methode
         public void BaueUnfall()
         {
             Console.WriteLine("Du hast einen Baum übersehen.");

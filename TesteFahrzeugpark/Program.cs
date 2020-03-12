@@ -112,30 +112,124 @@ namespace TesteFahrzeugpark
 
             #endregion
 
-            PKW pkw1 = new PKW("BMW", 230, 25000, 5);
-            pkw1.BaueUnfall();
+            #region Modul06: Interfaces und Polymorphismus
+            ////Instanzierung von Bsp-Objekt
+            //PKW pkw1 = new PKW("BMW", 190, 23000, 4);
+            ////Aufruf der Interface-Methode
+            //pkw1.Crash();
 
+            ////Zuweisung neuer Variablen (anderer Variablentyp) mit dem PKW-Objekt
+            ////-> Variablentyp definiert 'Sichtbarkeit' der Eigenschaften
+            //Fahrzeug fz1 = pkw1;
+            //IBewegbar bewegbaresObjekt = pkw1;
 
-            Fahrzeug fz1 = pkw1;
+            ////BSP: Variablentyp = Fahrzeug | Laufzeittyp (= Typ des Objekts) = PKW
+            //Fahrzeug fz2 = new PKW("VW", 190, 25000, 3);
 
-            IBewegbar bewegbaresObjekt = pkw1;
+            ////Prüdung, ob in Fahrzeug-Variable ein PKW-Objekt liegt...
+            //if (fz2 is PKW)
+            //{
+            //    //... wenn ja, dann Cast in PKW und Zuweisung zu PKW-Variable
+            //    PKW pkw2 = (PKW)fz2;
+            //}
 
-            MontiereNeuesRad(pkw1);
-            MontiereNeuesRad(new Flugzeug("Boing", 800, 20000000000, 9999));
+            ////Aufruf der BSP-Funktion (s.u.)
+            //MontiereNeuesRad(pkw1);
+            #endregion
 
+            #region Lab06: IBeladbar
+
+            //PKW pkw1 = new PKW("BMW", 250, 23000, 5);
+            //Flugzeug flugzeug1 = new Flugzeug("Boing", 750, 3000000, 9990);
+            //Schiff schiff1 = new Schiff("Titanic", 40, 3500000, Schiff.SchiffsTreibstoff.Dampf);
+
+            //BeladeFahrzeuge(pkw1, flugzeug1);
+            //BeladeFahrzeuge(flugzeug1, schiff1);
+            //BeladeFahrzeuge(schiff1, pkw1);
+
+            //Console.WriteLine("\n" + schiff1.BeschreibeMich());
+
+            #endregion
+
+            List<string> StädteListe = new List<string>();
+
+            StädteListe.Add("Berlin");
+            StädteListe.Add("Hamburg");
+            StädteListe.Add("München");
+            StädteListe.Add("Köln");
+            StädteListe.Add("Dresden");
+
+            Console.WriteLine(StädteListe[2]);
+
+            StädteListe[4] = "Leipzig";
+
+            Console.WriteLine(StädteListe.Count);
+
+            for (int i = 0; i < StädteListe.Count; i++)
+            {
+                Console.WriteLine(StädteListe[i]);
+            }
+
+            StädteListe.Remove("Köln");
+
+            List<Fahrzeug> FahrzeugListe = new List<Fahrzeug>();
+
+            FahrzeugListe.Add(new PKW("BMW", 250, 23000, 5));
+            FahrzeugListe.Add(new Flugzeug("Boing", 750, 3000000, 9990));
+            FahrzeugListe.Add(new Schiff("Titanic", 40, 3500000, Schiff.SchiffsTreibstoff.Dampf));
+
+            foreach (var item in FahrzeugListe)
+            {
+                Console.WriteLine(item.BeschreibeMich());
+            }
+
+            Dictionary<string, Fahrzeug> Dict = new Dictionary<string, Fahrzeug>();
+
+            Dict.Add("schwimmen", new Schiff("Titanic", 40, 3500000, Schiff.SchiffsTreibstoff.Dampf));
+            Dict.Add("fahren", new PKW("BMW", 250, 23000, 5));
+            Dict.Add("fliegen", new Flugzeug("Boing", 750, 3000000, 9990));
+
+            Console.WriteLine(Dict["fliegen"].Name);
+
+            foreach (var item in Dict)
+            {
+                Console.WriteLine(item.Key + ": " + item.Value.Name);
+            }
 
             Console.ReadKey();
         }
 
-        public static void MontiereNeuesRad(IBewegbar bewegbaresObjekt)
+        //Methode Lab06
+        public static void BeladeFahrzeuge(Fahrzeug fz1, Fahrzeug fz2)
         {
-            bewegbaresObjekt.AnzahlRäder++;
-
-            if(bewegbaresObjekt is PKW)
+            //Test, ob fz1 IBeladbar implementiert hat..
+            if (fz1 is IBeladbar)
             {
-                PKW pkw1 = (PKW)bewegbaresObjekt;
-                Console.WriteLine(pkw1.BeschreibeMich() + $" Er hat jetzt {pkw1.AnzahlRäder} Räder.");
+                //...wenn ja, dann Cast in IBeladbar und Aufruf der Belade()-Funktion
+                ((IBeladbar)fz1).Belade(fz2);
             }
+            //...wenn nein, dann Test, ob fz2 IBeladbar implementiert hat...
+            else if (fz2 is IBeladbar)
+            {
+                //...wenn ja, dann (alternativer) Cast in IBeladbar und Aufruf der Belade()-Funktion
+                (fz2 as IBeladbar).Belade(fz1);
+            }
+            //...wenn nein, dann Fehlermeldung
+            else
+                Console.WriteLine("Keines der Fahrzeuge kann ein Fahrzeug transportieren.");
+        }
+
+        //BSP-Funktion: Polymorphismus (Modul 06)
+        //Funktion empfängt ein beliebiges Objekt, dass das Interface IBewegbar implementiert hat
+        public static void MontiereNeuesRad(IBewegbar bewegbar)
+        {
+            //Manipulation der durch Interface definierten Eigenschaft
+            bewegbar.AnzahlRäder++;
+
+            //Test, ob Objekt ein Flugzeug ist...
+            if (bewegbar is Flugzeug)
+                //...wenn ja, dann Cast in Flugzeug und Manipulation der Flugzeug-Spezifischen Eigenschaft MaxFlughöhe
+                ((Flugzeug)bewegbar).MaxFlughöhe -= 100;
         }
 
     }

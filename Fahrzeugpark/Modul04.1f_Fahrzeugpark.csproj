@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Fahrzeug.cs" />
     <Compile Include="Flugzeug.cs" />
+    <Compile Include="IBeladbar.cs" />
     <Compile Include="IBewegbar.cs" />
     <Compile Include="PKW.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
