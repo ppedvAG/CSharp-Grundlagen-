@@ -44,5 +44,28 @@ namespace Fahrzeugpark
             Console.WriteLine("Du hast einen Baum übersehen.");
             AnzahlRäder--;
         }
+
+        //Statische Methode (gilt für die gesamte Klasse) zur Erstellung eines zufälligen PKWs 
+        private static Random generator = new Random();
+        public static PKW ErzeugeZufälligenPKW(string plusName)
+        {
+            string name;
+            switch (generator.Next(1, 5))
+            {
+                case 1:
+                    name = "BMW" + plusName;
+                    break;
+                case 2:
+                    name = "Mercedes" + plusName;
+                    break;
+                case 3:
+                    name = "Audi" + plusName;
+                    break;
+                default:
+                    name = "VW" + plusName;
+                    break;
+            }
+            return new PKW(name, generator.Next(15, 31) * 10, generator.Next(15, 30) * 1000, generator.Next(1, 3) == 1 ? 3 : 5);
+        }
     }
 }

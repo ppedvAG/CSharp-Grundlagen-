@@ -151,50 +151,143 @@ namespace TesteFahrzeugpark
 
             #endregion
 
-            List<string> StädteListe = new List<string>();
+            #region Modul07: Generische Listen
+            ////Deklaration und Initialisierung einer Liste von Strings
+            //List<string> Städteliste = new List<string>();
 
-            StädteListe.Add("Berlin");
-            StädteListe.Add("Hamburg");
-            StädteListe.Add("München");
-            StädteListe.Add("Köln");
-            StädteListe.Add("Dresden");
+            ////Hinzufügen von Listeneinträgen
+            //Städteliste.Add("Berlin");
+            //Städteliste.Add("Köln");
+            //Städteliste.Add("Hamburg");
+            //Städteliste.Add("Nürnberg");
+            //Städteliste.Add("München");
 
-            Console.WriteLine(StädteListe[2]);
+            ////Ausgabe der Länge der Liste
+            //Console.WriteLine(Städteliste.Count);
 
-            StädteListe[4] = "Leipzig";
+            ////Ausgabe der 3. Listenposition
+            //Console.WriteLine(Städteliste[2]);
 
-            Console.WriteLine(StädteListe.Count);
+            ////Manipulation der 3. Listenposition
+            //Staedteliste[2] = "Dresden";
+            //Console.WriteLine(Staedteliste[2]);
 
-            for (int i = 0; i < StädteListe.Count; i++)
-            {
-                Console.WriteLine(StädteListe[i]);
-            }
+            ////Schleife über die Liste
+            //foreach (var item in Städteliste)
+            //{
+            //    Console.WriteLine(item);
+            //}
 
-            StädteListe.Remove("Köln");
+            ////Löschen des Eintrags 'Köln' (Nachfolgende Einträge rücken nach oben)
+            //Staedteliste.Remove("Köln");
 
-            List<Fahrzeug> FahrzeugListe = new List<Fahrzeug>();
+            ////Bsp für Fahrzeug-Liste
+            //List<Fahrzeug> Fahrzeugliste = new List<Fahrzeug>();
 
-            FahrzeugListe.Add(new PKW("BMW", 250, 23000, 5));
-            FahrzeugListe.Add(new Flugzeug("Boing", 750, 3000000, 9990));
-            FahrzeugListe.Add(new Schiff("Titanic", 40, 3500000, Schiff.SchiffsTreibstoff.Dampf));
+            //Fahrzeugliste.Add(new PKW("BMW", 190, 23000, 4));
+            //Fahrzeugliste.Add(new PKW("BMW", 190, 23000, 4));
+            //Fahrzeugliste.Add(new PKW("BMW", 190, 23000, 4));
+            //Fahrzeugliste.Add(new PKW("BMW", 190, 23000, 4));
+            //Fahrzeugliste.Add(new PKW("BMW", 190, 23000, 4));
 
-            foreach (var item in FahrzeugListe)
-            {
-                Console.WriteLine(item.BeschreibeMich());
-            }
+            //foreach (var item in Fahrzeugliste)
+            //{
+            //    Console.WriteLine(item);
+            //}
 
-            Dictionary<string, Fahrzeug> Dict = new Dictionary<string, Fahrzeug>();
+            //Fahrzeugliste.RemoveAt(3);
 
-            Dict.Add("schwimmen", new Schiff("Titanic", 40, 3500000, Schiff.SchiffsTreibstoff.Dampf));
-            Dict.Add("fahren", new PKW("BMW", 250, 23000, 5));
-            Dict.Add("fliegen", new Flugzeug("Boing", 750, 3000000, 9990));
 
-            Console.WriteLine(Dict["fliegen"].Name);
+            ////Deklaration und Initialisierung eines Dictionarys (Key: Int, Value: String)
+            //Dictionary<int, string> Dict = new Dictionary<int, string>();
 
-            foreach (var item in Dict)
-            {
-                Console.WriteLine(item.Key + ": " + item.Value.Name);
-            }
+            ////Hinzufügen von Dictionary-Einträgen
+            //Dict.Add(1, "Hallo");
+            //Dict.Add(202, "Ciao");
+            //Dict.Add(3185, "Hi");
+
+            ////Ausgabe des Eintrags mit Key '202'
+            //Console.WriteLine(Dict[202]);
+
+            ////Deklaration und Initialisierung eines Hastables + Erstellung und Abruf von Einträgen (nicht-genereisches Dictionary nach dem Hash-Speicherprinzip)
+            //Hashtable ht = new Hashtable();
+            //ht.Add("Hallo", 450);
+            //ht.Add(78.5, new PKW("VW", 260, 250020, 4));
+            //Console.WriteLine(ht["Hallo"]);
+
+            ////Schleife über Dictionary
+            //foreach (var item in Dictionary1)
+            //{
+            //    Console.WriteLine(item.Key + ": " + item.Value);
+            //}
+
+            ////Deklaration und Initialisierung eines Hastables + Erstellung und Abruf von Einträgen (nicht-genereisches Dictionary nach dem Hash-Speicherprinzip)
+            //Hashtable ht = new Hashtable();
+            //ht.Add("Hallo", 450);
+            //ht.Add(78.5, new PKW("VW", 260, 250020, 4));
+            //Console.WriteLine(ht["Hallo"]);
+
+            ////Deklaration und Initialisierung eines HashSets (generische Liste nach dem Hash-Speicherprinzip)
+            //HashSet<int> hs = new HashSet<int>();
+            //hs.Add(23); 
+            #endregion
+
+            #region Lab07 ZufälligeFahrzeuglisten
+
+            //Queue<Fahrzeug> FzQueue = new Queue<Fahrzeug>();
+            //Stack<Fahrzeug> FzStack = new Stack<Fahrzeug>();
+            //Dictionary<Fahrzeug, Fahrzeug> FzDict = new Dictionary<Fahrzeug, Fahrzeug>();
+
+            //Random generator = new Random();
+
+            //int AnzahlFahrzeuge = 1000;
+
+            //for (int i = 0; i < AnzahlFahrzeuge; i++)
+            //{
+            //    int gewürfelteZahl = generator.Next(1, 4);
+            //    switch (gewürfelteZahl)
+            //    {
+            //        case 1:
+            //            FzQueue.Enqueue(new PKW($"BMW_Q{i}", 230, 25000, 5));
+            //            FzStack.Push(new PKW($"BMW_S{i}", 230, 25000, 5));
+            //            break;
+            //        case 2:
+            //            FzQueue.Enqueue(new Flugzeug("Boing", 800, 2500000000, 9999));
+            //            FzStack.Push(new Flugzeug("Boing", 800, 2500000000, 9999));
+            //            break;
+            //        case 3:
+            //            FzQueue.Enqueue(new Schiff($"Titanic_Q{i}", 50, 30000000, Schiff.SchiffsTreibstoff.Dampf));
+            //            FzStack.Push(new Schiff($"Titanic_S{i}", 50, 30000000, Schiff.SchiffsTreibstoff.Dampf));
+            //            break;
+
+            //    }
+            //}
+
+            //for (int i = 0; i < AnzahlFahrzeuge; i++)
+            //{
+            //    if(FzQueue.Peek() is IBeladbar)
+            //    {
+            //        //IBeladbar beladbaresObjekt = (IBeladbar)FzQueue.Peek();
+            //        //Fahrzeug oberstesStackObjekt = FzStack.Peek();
+            //        //beladbaresObjekt.Belade(oberstesStackObjekt);
+
+            //        ((IBeladbar)FzQueue.Peek()).Belade(FzStack.Peek());
+
+            //        FzDict.Add(FzQueue.Dequeue(), FzStack.Pop());
+            //    }
+            //    else
+            //    {
+            //        FzQueue.Dequeue();
+            //        FzStack.Pop();
+            //    }
+            //}
+
+            //foreach (var item in FzDict)
+            //{
+            //    Console.WriteLine($"{item.Key.Name} hat {item.Value.Name} geladen.");
+            //}
+
+            #endregion
 
             Console.ReadKey();
         }
