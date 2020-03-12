@@ -92,27 +92,51 @@ namespace TesteFahrzeugpark
 
             #region Lab05: PKW-, Schiff- und Flugzeug-Klasse
 
-            //Instanzierung eines Bsp-PKWs
-            PKW pkw1 = new PKW("BMW", 250, 23000, 5);
-            Console.WriteLine(pkw1.BeschreibeMich());
-            pkw1.Hupe();
+            ////Instanzierung eines Bsp-PKWs
+            //PKW pkw1 = new PKW("BMW", 250, 23000, 5);
+            //Console.WriteLine(pkw1.BeschreibeMich());
+            //pkw1.Hupe();
 
-            //Instanzierung eines Bsp-Schiffs
-            Schiff schiff1 = new Schiff("Titanic", 40, 3500000, Schiff.SchiffsTreibstoff.Dampf);
-            Console.WriteLine(schiff1.BeschreibeMich());
-            schiff1.Hupe();
+            ////Instanzierung eines Bsp-Schiffs
+            //Schiff schiff1 = new Schiff("Titanic", 40, 3500000, Schiff.SchiffsTreibstoff.Dampf);
+            //Console.WriteLine(schiff1.BeschreibeMich());
+            //schiff1.Hupe();
 
-            //Instanzierung eines Bsp-Flugzeugs
-            Flugzeug flugzeug1 = new Flugzeug("Boing", 750, 3000000, 9990);
-            Console.WriteLine(flugzeug1.BeschreibeMich());
-            flugzeug1.Hupe();
+            ////Instanzierung eines Bsp-Flugzeugs
+            //Flugzeug flugzeug1 = new Flugzeug("Boing", 750, 3000000, 9990);
+            //Console.WriteLine(flugzeug1.BeschreibeMich());
+            //flugzeug1.Hupe();
 
-            //Ausgabe der statischen Methode der Fahrzeugklasse
-            Console.WriteLine(Fahrzeug.ZeigeAnzahlFahrzeuge());
+            ////Ausgabe der statischen Methode der Fahrzeugklasse
+            //Console.WriteLine(Fahrzeug.ZeigeAnzahlFahrzeuge());
 
             #endregion
 
+            PKW pkw1 = new PKW("BMW", 230, 25000, 5);
+            pkw1.BaueUnfall();
+
+
+            Fahrzeug fz1 = pkw1;
+
+            IBewegbar bewegbaresObjekt = pkw1;
+
+            MontiereNeuesRad(pkw1);
+            MontiereNeuesRad(new Flugzeug("Boing", 800, 20000000000, 9999));
+
+
             Console.ReadKey();
         }
+
+        public static void MontiereNeuesRad(IBewegbar bewegbaresObjekt)
+        {
+            bewegbaresObjekt.AnzahlRäder++;
+
+            if(bewegbaresObjekt is PKW)
+            {
+                PKW pkw1 = (PKW)bewegbaresObjekt;
+                Console.WriteLine(pkw1.BeschreibeMich() + $" Er hat jetzt {pkw1.AnzahlRäder} Räder.");
+            }
+        }
+
     }
 }
